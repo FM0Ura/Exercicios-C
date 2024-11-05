@@ -28,6 +28,17 @@ int main() {
     printf("Rotacao: %f\n", rotacao);
 
     // Remove o MPU
+    inserir_aceleracao(mpu, 2.0, 3.0, 4.0);
+    inserir_rotacao(mpu, 0.2, 0.3, 0.4);
+
+    inserir_sensibilidade_aceleracao(mpu, 4);
+    inserir_sensibilidade_rotacao(mpu, 2000);
+
+    aceleracao = calcular_aceleracao(mpu);
+    rotacao = calcular_rotacao(mpu);
+
+    printf("Aceleracao: %f\n", aceleracao);
+    printf("Rotacao: %f\n", rotacao);
     remover_mpu(mpu);
 
     return 0;
